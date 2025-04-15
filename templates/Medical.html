@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Career Form</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #4b0082, #dda0dd);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            margin: 10;
+        }
+        .container {
+            width: 60%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            text-align: left;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.2);
+            color: black;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        button {
+            width: 100%;
+            background: #b15eff;
+            color: white;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 18px;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #8c3ebd;
+        }
+
+        /* Custom slider styling */
+        .slider-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .slider {
+            -webkit-appearance: none;
+            width: 85%;
+            height: 8px;
+            border-radius: 5px;
+            background: linear-gradient(to right, #b15eff, #ff6ec4);
+            outline: none;
+            opacity: 0.9;
+            transition: 0.2s;
+        }
+        .slider:hover {
+            opacity: 1;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 2px solid #b15eff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .slider::-webkit-slider-thumb:hover {
+            background: #ff6ec4;
+        }
+        .slider-value {
+            width: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button onclick="window.location.href='http://127.0.0.1:5000'" class="back-btn" style="width: 50%;">Back to Home Page</button>
+        <h2>Medical Career Information</h2>
+        <form action="/medical" method="POST" id="medical_form">
+            <label>Region:</label>
+            <input type="radio" name="region" value="Rural"> Rural
+            <input type="radio" name="region" value="Urban"> Urban
+
+            <label>High School Science Score:</label>
+            <input type="number" step="0.1" min="0" max="100" id="highSchoolScore" name="highSchoolScore">
+
+            <label>Biology Score:</label>
+            <input type="number" step="0.1" min="0" max="100" id="bScore" name="bScore">
+
+            <label>Chemistry Score:</label>
+            <input type="number" step="0.1" min="0" max="100" id="cScore" name="cScore">
+
+            <label>Physics Score:</label>
+            <input type="number" step="0.1" min="0" max="100" id="pScore" name="pScore">
+
+            <label>Undergraduate Degree:</label>
+            <select id="ugDegree" name="ugDegree">
+                <option>BSc Nursing</option>
+                <option>BDS</option>
+                <option>BPharm</option>
+                <option>MBBS</option>
+                <option>BSc Biotech</option>
+            </select>
+
+            <label>Medical School Ranking:</label>
+            <select id="medSchoolRanking" name="medSchoolRanking">
+                <option>Mid Tier</option>
+                <option>Top Tier</option>
+                <option>Low Tier</option>
+            </select>
+
+            <label>Institution Type:</label>
+            <input type="radio" name="institution" value="Public"> Public
+            <input type="radio" name="institution" value="Private"> Private
+
+            <label>Medical Entrance Exam Score:</label>
+            <input type="number" step="0.1" min="0" max="100" id="entranceScore" name="entranceScore">
+
+            <label>Ability to diagnose & treat patients:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="abilityToDiagnose" name="abilityToDiagnose">
+                <span class="slider-value" id="skillValue1" name="skillValue1">5</span>
+            </div>
+
+            <label>Doctor-patient interaction, explaining procedures:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="doctorPatientInteraction" name="doctorPatientInteraction">
+                <span class="slider-value" id="skillValue2" name="skillValue2">5</span>
+            </div>
+
+            <label>Hand-Eye Coordination:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="handEyeCoordination" name="handEyeCoordination">
+                <span class="slider-value" id="skillValue3" name="skillValue3">5</span>
+            </div>
+
+            <label>Empathy:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="empathy" name="empathy">
+                <span class="slider-value" id="skillValue4" name="skillValue4">5</span>
+            </div>
+
+            <label>Analytical Thinking:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="analyticalThinking" name="analyticalThinking">
+                <span class="slider-value" id="skillValue5" name="skillValue5">5</span>
+            </div>
+
+            <label>Years of Medical Education:</label>
+            <input type="number" id="yearsMedEdu" name="yearsMedEdu">
+
+            <label>Clinical Internship Experience (Months):</label>
+            <input type="number" id="cliInternExp" name="cliInternExp">
+
+            <label>Research Experience (Months):</label>
+            <input type="number" id="resExp" name="resExp">
+
+            <label>Medical Certifications:</label>
+            <input type="number" id="medCert" name="medCert">
+
+            <label>Specialization Courses:</label>
+            <input type="number" id="speCourse" name="speCourse">
+
+            <label>Interest in Surgery:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="surgery" name="surgery">
+                <span class="slider-value" id="skillValue6" name="skillValue6">5</span>
+            </div>
+
+            <label>Interest in Patient Care:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="patientCare" name="patientCare">
+                <span class="slider-value" id="skillValue7" name="skillValue7">5</span>
+            </div>
+
+            <label>Interest in Laboratory & Research:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="labReasearch" name="labReasearch">
+                <span class="slider-value" id="skillValue8" name="skillValue8">5</span>
+            </div>
+
+            <label>Interest in Emergency Medicine:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="emergencyMedicine" name="emergencyMedicine">
+                <span class="slider-value" id="skillValue9" name="skillValue9">5</span>
+            </div>
+            
+            <label>Interest in Mental Health & Psychology:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="mentalHealth" name="mentalHealth">
+                <span class="slider-value" id="skillValue10" name="skillValue10">5</span>
+            </div>
+
+            <label>Preferred Work Environment:</label>
+            <input type="radio" name="workenv" value="Clinic"> Clinic
+            <input type="radio" name="workenv" value="Research Lab"> Research Lab
+            <input type="radio" name="workenv" value="Hospital"> Hospital
+            <input type="radio" name="workenv" value="Pharma Industry"> Pharma Industry
+
+            <label>Comfort with Long Working Hours:</label>
+            <input type="number" id="workingHrs" name="workingHrs">
+
+            <label>Willingness to Work in Rural Areas:</label>
+            <input type="radio" name="work" value="Yes"> Yes
+            <input type="radio" name="work" value="No"> No
+
+            <label>Teamwork Preference:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider"  id="teamwork" name="teamwork">
+                <span class="slider-value" id="skillValue11" name="skillValue11">5</span>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+        {% if prediction %}
+        <h3>Predicted Career Path: {{ prediction }}</h3>
+        {% endif %}
+    </div>
+
+    <script>
+        // Update slider value dynamically
+        const slider1 = document.getElementById("abilityToDiagnose");
+        const output1 = document.getElementById("skillValue1");
+
+        const slider2 = document.getElementById("doctorPatientInteraction");
+        const output2 = document.getElementById("skillValue2");
+
+        const slider3 = document.getElementById("handEyeCoordination");
+        const output3 = document.getElementById("skillValue3");
+
+        const slider4 = document.getElementById("empathy");
+        const output4 = document.getElementById("skillValue4");
+
+        const slider5 = document.getElementById("analyticalThinking");
+        const output5 = document.getElementById("skillValue5");
+
+        const slider6 = document.getElementById("surgery");
+        const output6 = document.getElementById("skillValue6");
+
+        const slider7 = document.getElementById("patientCare");
+        const output7 = document.getElementById("skillValue7");
+
+        const slider8 = document.getElementById("labReasearch");
+        const output8 = document.getElementById("skillValue8");
+
+        const slider9 = document.getElementById("emergencyMedicine");
+        const output9 = document.getElementById("skillValue9");
+
+        const slider10 = document.getElementById("mentalHealth");
+        const output10 = document.getElementById("skillValue10");
+
+        const slider11 = document.getElementById("teamwork");
+        const output11 = document.getElementById("skillValue11");
+        
+        slider1.oninput = function() {
+            output1.textContent = this.value;
+        }
+
+        slider2.oninput = function() {
+            output2.textContent = this.value;
+        }
+
+        slider3.oninput = function() {
+            output3.textContent = this.value;
+        }
+
+        slider4.oninput = function() {
+            output4.textContent = this.value;
+        }
+
+        slider5.oninput = function() {
+            output5.textContent = this.value;
+        }
+
+        slider6.oninput = function() {
+            output6.textContent = this.value;
+        }
+
+        slider7.oninput = function() {
+            output7.textContent = this.value;
+        }
+
+        slider8.oninput = function() {
+            output8.textContent = this.value;
+        }
+
+        slider9.oninput = function() {
+            output9.textContent = this.value;
+        }
+
+        slider10.oninput = function() {
+            output10.textContent = this.value;
+        }
+
+        slider11.oninput = function() {
+            output11.textContent = this.value;
+        }
+    </script>
+</body>
+</html>

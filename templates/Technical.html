@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech & IT Career Form</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #4b0082, #dda0dd);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            margin: 10;
+        }
+        .container {
+            width: 60%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            text-align: left;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.2);
+            color: black;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        button {
+            width: 100%;
+            background: #b15eff;
+            color: white;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 18px;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #8c3ebd;
+        }
+
+        /* Custom slider styling */
+        .slider-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .slider {
+            -webkit-appearance: none;
+            width: 85%;
+            height: 8px;
+            border-radius: 5px;
+            background: linear-gradient(to right, #b15eff, #ff6ec4);
+            outline: none;
+            opacity: 0.9;
+            transition: 0.2s;
+        }
+        .slider:hover {
+            opacity: 1;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 2px solid #b15eff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .slider::-webkit-slider-thumb:hover {
+            background: #ff6ec4;
+        }
+        .slider-value {
+            width: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button onclick="window.location.href='http://127.0.0.1:5000'" class="back-btn" style="width: 50%;">Back to Home Page</button>
+        <h2>Tech & IT Career Information</h2>
+        <form action="/technical" method="POST" id="tech_form">
+            
+            <label>Education Level:</label>
+            <select id="education" name="education">
+                <option>PhD</option>
+                <option>Bachelor's</option>
+                <option>Master's</option>
+            </select>
+            
+            <label>Degree:</label>
+            <select id="degree" name="degree">
+                <option>Electronics</option>
+                <option>Information Technology</option>
+                <option>Computer Science</option>
+                <option>Software Engineering</option>
+            </select>
+            
+            <label>CGPA:</label>
+            <input type="number" step="0.01" id="cgpa" name="cgpa">
+            
+            <label>Coding Skill Level:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="codingSkill" name="codingSkill">
+                <span class="slider-value" id="skillValue">5</span>
+            </div>
+            
+            <label>Number of Programming Languages:</label>
+            <input type="number" id="numLanguages" name="numLanguages">
+
+            <label>Primary Programming Language:</label>
+            <select id="primaryLanguage" name="primaryLanguage">
+                <option>PHP</option>
+                <option>C++</option>
+                <option>C#</option>
+                <option>JavaScript</option>
+                <option>Java</option>
+                <option>Go</option>
+                <option>Python</option>
+                <option>Swift</option>
+            </select>
+
+            <label>Number of Projects:</label>
+            <input type="number" id="numProjects" name="numProjects">
+
+            <label>Major Project Domain:</label>
+            <select id="projectDomain" name="projectDomain">
+                <option>Cloud</option>
+                <option>Embedded Systems</option>
+                <option>Cybersecurity</option>
+                <option>Web Dev</option>
+                <option>AI</option>
+                <option>Blockchain</option>
+                <option>Python</option>
+                <option>Swift</option>
+            </select>
+
+            <label>Certifications Completed:</label>
+            <input type="number" id="certifications" name="certifications">
+
+            <label>Internship Experience (Months):</label>
+            <input type="number" id="internshipExp" name="internshipExp">
+
+            <label>Previous Job Experience (Years):</label>
+            <input type="number" id="jobExp" name="jobExp">
+
+            <label>Machine Learning Knowledge:</label>
+            <input type="radio" name="machinelearning" value="Yes"> Yes
+            <input type="radio" name="machinelearning" value="No"> No
+
+            <label>Cloud Computing Knowledge:</label>
+            <input type="radio" name="cloudcomputing" value="Yes"> Yes
+            <input type="radio" name="cloudcomputing" value="No"> No
+
+            <label>Cybersecurity Knowledge:</label>
+            <input type="radio" name="cybersecurity" value="Yes"> Yes
+            <input type="radio" name="cybersecurity" value="No"> No
+
+            <label>Database Knowledge:</label>
+            <input type="radio" name="database" value="Yes"> Yes
+            <input type="radio" name="database" value="No"> No
+
+            <label>Problem-Solving Skill:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="problemSolvingSkill" name="problemSolvingSkill">
+                <span class="slider-value" id="skillValue2" name="skillValue2">5</span>
+            </div>
+
+            <label>Communication Skill:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="communicationSkill" name="communicationSkill">
+                <span class="slider-value" id="skillValue3" name="skillValue3">5</span>
+            </div>
+            
+            <label>Preferred Work Environment:</label>
+            <input type="radio" name="workenv" value="Remote"> Remote
+            <input type="radio" name="workenv" value="Hybrid"> Hybrid
+            <input type="radio" name="workenv" value="Onsite"> Onsite
+
+            <label>Preferred Job Role:</label>
+            <select id="jobRole" name="jobRole">
+                <option>Business Intelligence Analyst</option>
+                <option>Data Scientist</option>
+                <option>Cloud Engineer</option>
+                <option>System Analyst</option>
+                <option>Web Developer</option>
+                <option>Software Engineer</option>
+                <option>AI/ML Engineer</option>
+                <option>Full Stack Developer</option>
+                <option>DevOps Engineer</option>
+                <option>Cybersecurity Analyst</option>
+                <option>UI/UX Designer</option>
+                <option>Database Administrator</option>
+            </select>
+
+            <label>Soft Skills:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="softSkill" name="softSkill">
+                <span class="slider-value" id="skillValue4" name="skillValue4">5</span>
+            </div>
+
+            <label>Hackathon Participation:</label>
+            <input type="radio" name="hackathon" value="Yes"> Yes
+            <input type="radio" name="hackathon" value="No"> No
+
+            <label>Open-Source Contributions:</label>
+            <input type="radio" name="opensource" value="Yes"> Yes
+            <input type="radio" name="opensource" value="No"> No
+            
+            <button type="submit">Submit</button>
+        </form>
+        {% if prediction %}
+        <h3>Predicted Career Path: {{ prediction }}</h3>
+        {% endif %}
+    </div>
+
+    <script>
+        // Update slider value dynamically
+        const slider = document.getElementById("codingSkill");
+        const output = document.getElementById("skillValue");
+
+        const slider2 = document.getElementById("problemSolvingSkill");
+        const output2 = document.getElementById("skillValue2");
+
+        const slider3 = document.getElementById("communicationSkill");
+        const output3 = document.getElementById("skillValue3");
+
+        const slider4 = document.getElementById("softSkill");
+        const output4 = document.getElementById("skillValue4");
+        
+        slider.oninput = function() {
+            output.textContent = this.value;
+        }
+
+        slider2.oninput = function() {
+            output2.textContent = this.value;
+        }
+
+        slider3.oninput = function() {
+            output3.textContent = this.value;
+        }
+
+        slider4.oninput = function() {
+            output4.textContent = this.value;
+        }
+    </script>
+</body>
+</html>

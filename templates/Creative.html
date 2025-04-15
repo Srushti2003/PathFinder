@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative and Design Career Form</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #4b0082, #dda0dd);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            margin: 10;
+        }
+        .container {
+            width: 60%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            text-align: left;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.2);
+            color: black;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        button {
+            width: 100%;
+            background: #b15eff;
+            color: white;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 18px;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #8c3ebd;
+        }
+
+        /* Custom slider styling */
+        .slider-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .slider {
+            -webkit-appearance: none;
+            width: 85%;
+            height: 8px;
+            border-radius: 5px;
+            background: linear-gradient(to right, #b15eff, #ff6ec4);
+            outline: none;
+            opacity: 0.9;
+            transition: 0.2s;
+        }
+        .slider:hover {
+            opacity: 1;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 2px solid #b15eff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .slider::-webkit-slider-thumb:hover {
+            background: #ff6ec4;
+        }
+        .slider-value {
+            width: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button onclick="window.location.href='http://127.0.0.1:5000'" class="back-btn" style="width: 50%;">Back to Home Page</button>
+        <h2>Creative and Design Information</h2>
+        <form action="/creative" method="post" id="creative_form">
+            <label>Creativity Score:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="creativity" name="creativity">
+                <span class="slider-value" id="skillValue1" name="skillValue1">5</span>
+            </div>
+
+            <label>Adobe Photoshop Proficiency:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="adobePhotoshop" name="adobePhotoshop">
+                <span class="slider-value" id="skillValue2" name="skillValue2">5</span>
+            </div>
+
+            <label>Adobe Illustrator Proficiency:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="adobeIllustrator" name="adobeIllustrator">
+                <span class="slider-value" id="skillValue3" name="skillValue3">5</span>
+            </div>
+
+            <label>Adobe After Effects Proficiency:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="adobeAfterEffects" name="adobeAfterEffects">
+                <span class="slider-value" id="skillValue4" name="skillValue4">5</span>
+            </div>
+
+            <label>3D Modeling Skill:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="3DModeling" name="3DModeling">
+                <span class="slider-value" id="skillValue5" name="skillValue5">5</span>
+            </div>
+
+            <label>UI/UX Knowledge:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="UI/UXKnowledge" name="UI/UXKnowledge">
+                <span class="slider-value" id="skillValue6" name="skillValue6">5</span>
+            </div>
+
+            <label>Video Editing Skill:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="videoEditing" name="videoEditing">
+                <span class="slider-value" id="skillValue7" name="skillValue7">5</span>
+            </div>
+            
+            <label>Game Design Knowledge:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="gameDesign" name="gameDesign">
+                <span class="slider-value" id="skillValue8" name="skillValue8">5</span>
+            </div>
+
+            <label>Sketching/Drawing Skill:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="sketching" name="sketching">
+                <span class="slider-value" id="skillValue9" name="skillValue9">5</span>
+            </div>
+
+            <label>Typography Skill:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="typography" name="typography">
+                <span class="slider-value" id="skillValue10" name="skillValue10">5</span>
+            </div>
+
+            <label>Color Theory Knowledge:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="colorTheory" name="colorTheory">
+                <span class="slider-value" id="skillValue11" name="skillValue11">5</span>
+            </div>
+
+            <label>Branding Knowledge:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="branding" name="branding">
+                <span class="slider-value" id="skillValue12" name="skillValue12">5</span>
+            </div>
+
+            <label>Web Development Knowledge:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="web" name="web">
+                <span class="slider-value" id="skillValue13" name="skillValue13">5</span>
+            </div>
+
+            <label>Fashion Design Knowledge:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="fashion" name="fashion">
+                <span class="slider-value" id="skillValue14" name="skillValue14">5</span>
+            </div>
+
+            <label>Interior Design Knowledge:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="interior" name="interior">
+                <span class="slider-value" id="skillValue15" name="skillValue15">5</span>
+            </div>
+
+            <label>Product Design Knowledge:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="productDesign" name="productDesign">
+                <span class="slider-value" id="skillValue16" name="skillValue16">5</span>
+            </div>
+
+            <label>Illustration Skill:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="illustration" name="illustration">
+                <span class="slider-value" id="skillValue17" name="skillValue17">5</span>
+            </div>
+
+            <label>Animation Skill:</label>
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="5" class="slider" id="animation" name="animation">
+                <span class="slider-value" id="skillValue18" name="skillValue18">5</span>
+            </div>
+
+            <label>Years of Experience:</label>
+            <input type="number" id="yrsExp" name="yrsExp">
+
+            <label>Preferred Design Style:</label>
+            <select id="designStyle" name="designStyle">
+                <option>Minimalist</option>
+                <option>Classic</option>
+                <option>Abstract</option>
+                <option>Modern</option>
+                <option>Cartoon</option>
+                <option>Realistic</option>
+                <option>Futuristic</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+        {% if prediction %}
+        <h3>Predicted Career Path: {{ prediction }}</h3>
+        {% endif %}
+    </div>
+
+    <script>
+        // Update slider value dynamically
+        const slider1 = document.getElementById("creativity");
+        const output1 = document.getElementById("skillValue1");
+
+        const slider2 = document.getElementById("adobePhotoshop");
+        const output2 = document.getElementById("skillValue2");
+
+        const slider3 = document.getElementById("adobeIllustrator");
+        const output3 = document.getElementById("skillValue3");
+
+        const slider4 = document.getElementById("adobeAfterEffects");
+        const output4 = document.getElementById("skillValue4");
+
+        const slider5 = document.getElementById("3DModeling");
+        const output5 = document.getElementById("skillValue5");
+
+        const slider6 = document.getElementById("UI/UXKnowledge");
+        const output6 = document.getElementById("skillValue6");
+
+        const slider7 = document.getElementById("videoEditing");
+        const output7 = document.getElementById("skillValue7");
+
+        const slider8 = document.getElementById("gameDesign");
+        const output8 = document.getElementById("skillValue8");
+
+        const slider9 = document.getElementById("sketching");
+        const output9 = document.getElementById("skillValue9");
+
+        const slider10 = document.getElementById("typography");
+        const output10 = document.getElementById("skillValue10");
+
+        const slider11 = document.getElementById("colorTheory");
+        const output11 = document.getElementById("skillValue11");
+
+        const slider12 = document.getElementById("branding");
+        const output12 = document.getElementById("skillValue12");
+
+        const slider13 = document.getElementById("web");
+        const output13 = document.getElementById("skillValue13");
+
+        const slider14 = document.getElementById("fashion");
+        const output14 = document.getElementById("skillValue14");
+
+        const slider15 = document.getElementById("interior");
+        const output15 = document.getElementById("skillValue15");
+
+        const slider16 = document.getElementById("productDesign");
+        const output16 = document.getElementById("skillValue16");
+
+        const slider17 = document.getElementById("illustration");
+        const output17 = document.getElementById("skillValue17");
+
+        const slider18 = document.getElementById("animation");
+        const output18 = document.getElementById("skillValue18");
+        
+        slider1.oninput = function() {
+            output1.textContent = this.value;
+        }
+
+        slider2.oninput = function() {
+            output2.textContent = this.value;
+        }
+
+        slider3.oninput = function() {
+            output3.textContent = this.value;
+        }
+
+        slider4.oninput = function() {
+            output4.textContent = this.value;
+        }
+
+        slider5.oninput = function() {
+            output5.textContent = this.value;
+        }
+
+        slider6.oninput = function() {
+            output6.textContent = this.value;
+        }
+
+        slider7.oninput = function() {
+            output7.textContent = this.value;
+        }
+
+        slider8.oninput = function() {
+            output8.textContent = this.value;
+        }
+
+        slider9.oninput = function() {
+            output9.textContent = this.value;
+        }
+
+        slider10.oninput = function() {
+            output10.textContent = this.value;
+        }
+
+        slider11.oninput = function() {
+            output11.textContent = this.value;
+        }
+
+        slider12.oninput = function() {
+            output12.textContent = this.value;
+        }
+
+        slider13.oninput = function() {
+            output13.textContent = this.value;
+        }
+
+        slider14.oninput = function() {
+            output14.textContent = this.value;
+        }
+
+        slider15.oninput = function() {
+            output15.textContent = this.value;
+        }
+
+        slider16.oninput = function() {
+            output16.textContent = this.value;
+        }
+
+        slider17.oninput = function() {
+            output17.textContent = this.value;
+        }
+
+        slider18.oninput = function() {
+            output18.textContent = this.value;
+        }
+    </script>
+</body>
+</html>
