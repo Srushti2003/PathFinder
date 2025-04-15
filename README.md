@@ -28,7 +28,7 @@ PathFinder is an intelligent machine learning-powered application that helps stu
 - Flask
 - HTML/CSS (basic frontend)
 
-📸 Screenshots
+## 📸 Screenshots
 ![image](https://github.com/user-attachments/assets/0d87f73d-5595-4e43-ab30-7587fc0d8d45)
 
 ![image](https://github.com/user-attachments/assets/04835355-d8b8-45d4-948a-5fe6919b0fbd)
@@ -45,7 +45,7 @@ PathFinder is an intelligent machine learning-powered application that helps stu
 
 ![image](https://github.com/user-attachments/assets/d662944c-a534-40a3-b5f7-0652a16055ec)
 
-📚 Learnings & Outcomes
+## 📚 Learnings & Outcomes
 Real-world implementation of machine learning pipelines
 
 Gained experience in web integration using Flask
